@@ -31,7 +31,7 @@ public class Solution283 {
      * @Return: void
      * @Date: 2021/9/15 18:11
      */
-    public void moveZeroesGF(int[] nums) {
+    public static void moveZeroesGF(int[] nums) {
         int n = nums.length, left = 0, right = 0;
         while (right < n) {
             if (nums[right] != 0) {
@@ -42,9 +42,14 @@ public class Solution283 {
         }
     }
 
-    public void swap(int[] nums, int left, int right) {
+    public static void swap(int[] nums, int left, int right) {
         int temp = nums[left];
         nums[left] = nums[right];
         nums[right] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] nums={0,1,0,3,12};
+        Solution283.moveZeroesGF(nums);
     }
 }
