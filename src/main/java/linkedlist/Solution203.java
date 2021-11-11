@@ -29,6 +29,28 @@ public class Solution203 {
         return firstNode;
     }
 
+    public static ListNode removeElementsGF1(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
+        head.next = removeElementsGF1(head.next, val);
+        return head.val == val ? head.next : head;
+    }
+
+    public static ListNode removeElementsGF2(ListNode head, int val) {
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+        ListNode temp = dummyHead;
+        while (temp.next != null) {
+            if (temp.next.val == val) {
+                temp.next = temp.next.next;
+            } else {
+                temp = temp.next;
+            }
+        }
+        return dummyHead.next;
+    }
+
     public static void main(String[] args) {
         ListNode listNode6 = new ListNode(6, null);
         ListNode listNode5 = new ListNode(5, listNode6);
