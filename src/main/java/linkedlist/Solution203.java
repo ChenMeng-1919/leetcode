@@ -59,7 +59,7 @@ public class Solution203 {
         ListNode listNode2 = new ListNode(6, listNode3);
         ListNode listNode1 = new ListNode(2, listNode2);
         ListNode listNode = new ListNode(1, listNode1);
-        ListNode listNode7 = Solution203.removeElements(listNode, 6);
+        ListNode listNode7 = Solution203.removeElementsGF1(listNode, 6);
     }
 }
 
